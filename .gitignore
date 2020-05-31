@@ -30,3 +30,7 @@
 *.exe
 *.out
 *.app
+
+build/
+build_arm/
+build_x86/

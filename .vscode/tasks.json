@@ -1,0 +1,25 @@
+{
+    "version": "0.1.0",
+    "command": "sh",
+    "isShellCommand": true,
+    "args": ["-c"],
+    "showOutput": "always",
+    "suppressTaskName": true,
+    "options": {
+        "cwd": "${workspaceRoot}"
+    },
+    "tasks": [
+        {
+            "taskName": "Build ARM",
+            "args": ["rm -rf build_arm && mkdir build_arm && cd build_arm && cmake -G 'Unix Makefiles' -DCMAKE_BUILD_TYPE=Debug -DCMAKE_TOOLCHAIN_FILE=${workspaceRoot}/toolchain-arm.cmake ${workspaceRoot} && make -j 8"]
+        },
+        {
+            "taskName": "Build x86",
+            "args": ["rm -rf build_x86 && mkdir build_x86 && cd build_x86 && cmake -G 'Unix Makefiles' -DCMAKE_BUILD_TYPE=Debug ${workspaceRoot} && make -j 2"]     
+        },
+        {
+            "taskName": "Run Tests",
+            "args": ["rm -rf build_x86_test && mkdir build_x86_test && cd build_x86_test && cmake -G 'Unix Makefiles' -DCMAKE_BUILD_TYPE=Debug ${workspaceRoot} -DMAKE_TESTS=True && make -j 8 && ./runTests"]
+        }
+    ]
+}

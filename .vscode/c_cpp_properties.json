@@ -1,0 +1,20 @@
+{
+    "configurations": [
+        {
+            "name": "DefaultUbuntu",
+            "includePath": [
+                "${workspaceFolder}/include/**",
+                "${workspaceFolder}/test/**",
+                "${workspaceFolder}/mock/**",
+                "/usr/include/c++/**",
+                "/usr/include/**"
+            ],
+            "defines": [],
+            "compilerPath": "/usr/bin/g++",
+            "cStandard": "c11",
+            "cppStandard": "c++11",
+            "intelliSenseMode": "${default}"
+        }
+    ],
+    "version": 4
+}
