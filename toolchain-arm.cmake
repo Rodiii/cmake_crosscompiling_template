@@ -1,4 +1,4 @@
-set(CMAKE_TOOLCHAIN_FILE "toolchain-rpi.cmake")
+set(CMAKE_TOOLCHAIN_FILE "toolchain-arm.cmake")
 SET(CMAKE_SYSTEM_NAME Linux)
 SET(CMAKE_SYSTEM_VERSION 1)
 
